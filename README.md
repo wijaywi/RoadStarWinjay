@@ -1,7 +1,7 @@
 # RoadStar Winjay
 
 <p align="center">
-  <img src="logo.png" alt="RoadStar Winjay" width="210"/>
+  <img src="logo.png" alt="RoadStar Winjay" width="300"/>
 </p>
 
 RoadStar Winjay is an all-in-one logistics, load matching, and fleet management platform, designed for modern dispatching.
