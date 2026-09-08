@@ -1,5 +1,9 @@
 # RoadStar Winjay
 
+<p align="center">
+  <img src="coywin_logo_.png" alt="Coywin Logo" width="210"/>
+</p>
+
 RoadStar Winjay is an all-in-one logistics, load matching, and fleet management platform, designed for modern dispatching.
 
 ## Features Built
