@@ -37,8 +37,8 @@ export default function FleetHub() {
     setError('');
     try {
       const [vehRes, drvRes] = await Promise.all([
-        fetch(`${import.meta.env.VITE_API_URL}/api/fleet/vehicles`),
-        fetch(`${import.meta.env.VITE_API_URL}/api/fleet/drivers`)
+        fetch(`/api/fleet/vehicles`),
+        fetch(`/api/fleet/drivers`)
       ]);
       
       if (!vehRes.ok || !drvRes.ok) throw new Error('Failed to fetch data');
@@ -62,7 +62,7 @@ export default function FleetHub() {
   const handleAddVehicle = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/fleet/vehicles`, {
+      await fetch(`/api/fleet/vehicles`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newVehicle)
@@ -78,7 +78,7 @@ export default function FleetHub() {
   const handleAddDriver = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/fleet/drivers`, {
+      await fetch(`/api/fleet/drivers`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newDriver)

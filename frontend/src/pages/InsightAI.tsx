@@ -31,8 +31,8 @@ export default function InsightAI() {
     setLoading(true);
     setError('');
     Promise.all([
-      fetch(`${import.meta.env.VITE_API_URL}/api/loads`),
-      fetch(`${import.meta.env.VITE_API_URL}/api/fleet/vehicles`)
+      fetch(`/api/loads`),
+      fetch(`/api/fleet/vehicles`)
     ])
     .then(async ([lRes, vRes]) => {
       if (!lRes.ok || !vRes.ok) throw new Error('Failed to fetch data');
@@ -71,7 +71,7 @@ export default function InsightAI() {
     setLoadingAI(true);
     setAiSummary('');
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/insights/summary`, {
+      const res = await fetch(`/api/insights/summary`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fleet: vehicles, loads })

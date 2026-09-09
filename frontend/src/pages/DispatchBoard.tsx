@@ -49,10 +49,10 @@ export default function DispatchBoard() {
     setError('');
     try {
       const [lRes, vRes, dRes, sRes] = await Promise.all([
-        fetch(`${import.meta.env.VITE_API_URL}/api/loads`),
-        fetch(`${import.meta.env.VITE_API_URL}/api/fleet/vehicles`),
-        fetch(`${import.meta.env.VITE_API_URL}/api/fleet/drivers`),
-        fetch(`${import.meta.env.VITE_API_URL}/api/schedules`)
+        fetch(`/api/loads`),
+        fetch(`/api/fleet/vehicles`),
+        fetch(`/api/fleet/drivers`),
+        fetch(`/api/schedules`)
       ]);
       if (!lRes.ok || !vRes.ok || !dRes.ok || !sRes.ok) throw new Error('Failed to fetch data');
       setLoads(await lRes.json());
@@ -73,7 +73,7 @@ export default function DispatchBoard() {
 
   const updateLoadStatus = async (load: Load, newStatus: string) => {
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/loads/${load.id}`, {
+      await fetch(`/api/loads/${load.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
@@ -109,7 +109,7 @@ export default function DispatchBoard() {
   const confirmMatch = async () => {
     if (!suggestedMatch) return;
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/loads/${suggestedMatch.load.id}`, {
+      await fetch(`/api/loads/${suggestedMatch.load.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

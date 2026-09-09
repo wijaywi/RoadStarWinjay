@@ -146,7 +146,7 @@ export default function LoadPlanner() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}/api/fleet/vehicles`)
+    fetch(`/api/fleet/vehicles`)
       .then(r => {
         if (!r.ok) throw new Error('Network response was not ok');
         return r.json();

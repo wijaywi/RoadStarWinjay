@@ -82,8 +82,8 @@ export default function CrewPlanner() {
     setError('');
     try {
       const [dRes, sRes] = await Promise.all([
-        fetch(`${import.meta.env.VITE_API_URL}/api/fleet/drivers`),
-        fetch(`${import.meta.env.VITE_API_URL}/api/schedules`)
+        fetch(`/api/fleet/drivers`),
+        fetch(`/api/schedules`)
       ]);
       if (!dRes.ok || !sRes.ok) throw new Error('Failed to fetch data');
       const dData = await dRes.json();
@@ -133,7 +133,7 @@ export default function CrewPlanner() {
     }
 
     try {
-      await fetch(`${import.meta.env.VITE_API_URL}/api/schedules`, {
+      await fetch(`/api/schedules`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

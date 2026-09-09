@@ -13,7 +13,7 @@ export default function Integrations() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/loads`);
+      const res = await fetch(`/api/loads`);
       if (!res.ok) throw new Error('Failed to fetch data');
       setLoads(await res.json());
     } catch (err) {
@@ -70,7 +70,7 @@ export default function Integrations() {
     if (newLoads.length > 0) {
       for (const load of newLoads) {
         try {
-          await fetch(`${import.meta.env.VITE_API_URL}/api/loads`, {
+          await fetch(`/api/loads`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(load)
