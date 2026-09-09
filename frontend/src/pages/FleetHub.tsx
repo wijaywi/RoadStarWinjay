@@ -49,7 +49,7 @@ export default function FleetHub() {
       setDrivers(drvData);
     } catch (err: any) {
       console.error('Error fetching fleet data', err);
-      setError('Tidak bisa terhubung ke server, pastikan backend berjalan.');
+      setError('Cannot connect to server, please ensure backend is running.');
     } finally {
       setLoading(false);
     }

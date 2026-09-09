@@ -8,22 +8,22 @@ router.post('/summary', async (req, res) => {
   
   if (!apiKey || apiKey === 'your_anthropic_api_key_here') {
     return res.status(500).json({ 
-      error: 'API Key Anthropic belum di-set di file .env (ANTHROPIC_API_KEY)' 
+      error: 'Anthropic API Key has not been set in .env (ANTHROPIC_API_KEY)' 
     });
   }
 
   try {
     const prompt = `
-      Anda adalah asisten AI sistem logistik "RoadStar Winjay".
-      Tolong analisis data armada dan pengiriman berikut:
-      Armada: ${JSON.stringify(fleet)}
-      Pengiriman: ${JSON.stringify(loads)}
+      You are an AI assistant for the "RoadStar Winjay" logistics system.
+      Please analyze the following fleet and load data:
+      Fleet: ${JSON.stringify(fleet)}
+      Loads: ${JSON.stringify(loads)}
       
-      Buatlah ringkasan naratif dalam Bahasa Indonesia yang profesional dan singkat (maksimal 3 paragraf).
-      Fokus pada:
-      1. Jumlah pengiriman yang berisiko delay (utilisasi kapasitas > 80%).
-      2. Jumlah truk yang butuh maintenance (mileage >= 100.000).
-      3. Rekomendasi tindakan singkat.
+      Create a professional and concise narrative summary (maximum 3 paragraphs).
+      Focus on:
+      1. Number of loads at risk of delay (capacity utilization > 80%).
+      2. Number of trucks requiring maintenance (mileage >= 100,000 miles).
+      3. Brief actionable recommendations.
     `;
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {

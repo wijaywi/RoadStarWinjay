@@ -18,7 +18,7 @@ export default function Integrations() {
       setLoads(await res.json());
     } catch (err) {
       console.error(err);
-      setError('Tidak bisa terhubung ke server, pastikan backend berjalan.');
+      setError('Cannot connect to server, please ensure backend is running.');
     } finally {
       setLoading(false);
     }

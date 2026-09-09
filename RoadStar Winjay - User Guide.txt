@@ -1,0 +1,25 @@
+RoadStar Winjay - User Guide.
+
+1. Fleet Hub.
+Purpose: Manage transportation assets and personnel.
+Usage: Use the "Add Vehicle" button to register new trucks/containers (plate, type, capacity). Use the "Add Driver" button to input driver details (name, CDL license, phone). Monitor the real-time status and total mileage of your fleet on the data tables.
+
+2. Load Planner
+Purpose: Optimize cargo placement using 3D visualization.
+Usage: Select a container profile or enter custom dimensions (in inches). Add cargo items by specifying quantity, dimensions (L/W/H), and weight (lbs). Click "Calculate & Render 3D" to generate a visual bin-packing algorithm output.
+
+3. Crew Planner
+Purpose: Manage routing and driver assignments visually.
+Usage: Open the interactive map to view load origins and destinations. Monitor real-time distance calculations (in miles) and assign available drivers to specific routes directly from the interface.
+
+4. Dispatch Board
+Purpose: Assign loads to vehicles efficiently.
+Usage: Review the list of pending loads. Click the "Auto-Match" button to let the system automatically find the most suitable vehicle and driver based on capacity and availability. Click "Assign" to finalize the dispatch and change the status to in-transit.
+
+5. Insight AI
+Purpose: Predictive analytics and risk management.
+Usage: View automatic risk assessments for delayed loads and maintenance alerts for high-mileage vehicles. Click "Generate AI Summary" to request a comprehensive executive report of your current logistics performance.
+
+6. Integrations
+Purpose: Data portability and API connectivity.
+Usage: Use the CSV tool to bulk import or export load data. Consult the on-screen REST API documentation (GET/POST endpoints) to integrate external software with the RoadStar Winjay backend.
